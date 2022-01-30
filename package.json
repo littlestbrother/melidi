@@ -1,0 +1,14 @@
+{
+  "name": "melidi",
+  "version": "1.0.0",
+  "description": "an online midi editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: droopy likes your face\" && exit 1"
+  },
+  "author": "aaron kauffman",
+  "license": "MIT",
+  "dependencies": {
+    "midi-player-js": "^2.0.16"
+  }
+}

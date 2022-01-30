@@ -6,7 +6,7 @@ Aaron Kauffman
 
 **Project's Purpose or Goal**: 
 
-- A MIDI editor which supports 2-4 octaves.
+- A MIDI sequencer which supports 2-4 octaves.
 - Playback with BPM change.
 - A simple way to share your MIDI creation.
 
