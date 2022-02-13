@@ -8,3 +8,4 @@ const Player = new MidiPlayer.Player(function(event) {
 // Load a MIDI file
 Player.loadFile('./src/midi/sheiks-theme.mid');
 Player.play();
+
