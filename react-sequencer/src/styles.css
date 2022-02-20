@@ -1,0 +1,47 @@
+/* page wide styling */
+
+/* https://colorhunt.co/palette/f5f5f5f0545430475e121212 */
+/* https://colorhunt.co/palette/e8e8e8f0545430475e222831 */
+/* https://colorhunt.co/palette/1919192d4263c84b31ecdbba */
+
+body{
+    background-color: #121212;
+}
+
+.container{
+    padding: 10px;
+    background-color: #222831;
+}
+
+/* sequencer keys */
+
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 0px;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.key {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  background-color: #FEECE9;
+  margin: 1px;
+}
+
+.sharp {
+    background-color: #CCD1E4;
+}
+
+.key.pressed {
+  background-color: #FE7E6D;
+}
