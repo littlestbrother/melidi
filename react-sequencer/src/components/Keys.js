@@ -3,7 +3,7 @@ import Grid from "../components/Grid";
 import "../styles.css";
 
 export default function Keys() {
-  const [grid] = useState({ cells: 36, rows: 1 });
+  const [grid] = useState({ cells: 19, rows: 1 });
 
   return (
     <div className="keys">

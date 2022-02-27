@@ -4,6 +4,8 @@
 /* https://colorhunt.co/palette/e8e8e8f0545430475e222831 */
 /* https://colorhunt.co/palette/1919192d4263c84b31ecdbba */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
 body {
   background-color: #121212;
 }
@@ -32,14 +34,12 @@ dd {
 }
 
 .name{
-  width: 40px;
-  min-width: 40px;
-  height: 40px;
-  min-height: 40px;
-  background-color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
+  padding: 10.5px;
+  min-width: 20px;
+  background-color: #E8E8E8;
   margin: 1px;
-  font-style: italic;
-  font-weight: bolder;
+  text-align: center;
 }
 
 .origin{
