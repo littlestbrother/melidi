@@ -26,6 +26,7 @@ const Grid = ({
       <main>
         {rows.map((row, index) => (
           <ul className={keyName} key={"index"}>
+            <p className="name origin">{keyName.replace(new RegExp("[0-9]","g"), "").replace("row", "")}</p>
             {cells.map((cell, index) => (
               <li key={index} className="key sharp" onClick={handleClick} />
             ))}
@@ -38,6 +39,7 @@ const Grid = ({
       <main>
         {rows.map((row, index) => (
           <ul className={keyName} key={index}>
+            <p className="name">{keyName.replace(new RegExp("[0-9]","g"), "").replace("row", "")}</p>
             {cells.map((cell, index) => (
               <li key={index} className="key" onClick={handleClick} />
             ))}

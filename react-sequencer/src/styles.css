@@ -4,13 +4,13 @@
 /* https://colorhunt.co/palette/e8e8e8f0545430475e222831 */
 /* https://colorhunt.co/palette/1919192d4263c84b31ecdbba */
 
-body{
-    background-color: #121212;
+body {
+  background-color: #121212;
 }
 
-.container{
-    padding: 10px;
-    background-color: #222831;
+.container {
+  padding: 10px;
+  /* background-color: #222831; */
 }
 
 /* sequencer keys */
@@ -27,6 +27,24 @@ dd {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: #222831; */
+  /* margin-right: 130px; */
+}
+
+.name{
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  background-color: #F5F5F5;
+  margin: 1px;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.origin{
+  background-color: #191919 ;
+  color: #F5F5F5;
 }
 
 .key {
@@ -34,14 +52,14 @@ dd {
   min-width: 40px;
   height: 40px;
   min-height: 40px;
-  background-color: #FEECE9;
+  background-color: #F5F5F5;
   margin: 1px;
 }
 
 .sharp {
-    background-color: #CCD1E4;
+  background-color: #9D9D9D;
 }
 
 .key.pressed {
-  background-color: #FE7E6D;
+  background-color: #fe7e6d;
 }
