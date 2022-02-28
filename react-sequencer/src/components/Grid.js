@@ -1,5 +1,4 @@
 import React from "react";
-import PianoControls from "./PianoControls";
 
 const Grid = ({
   grid,
@@ -14,7 +13,6 @@ const Grid = ({
   const rows = new Array(grid.rows).fill(0);
 
   const handleClick = (e) => {
-    // PianoControls.state.recording.events = [{"midiNumber":48,"time":0,"duration":0.2},{"midiNumber":50,"time":0.2,"duration":0.2},{"midiNumber":52,"time":0.4,"duration":0.2},{"midiNumber":53,"time":0.6000000000000001,"duration":0.2},{"midiNumber":55,"time":0.8,"duration":0.2},{"midiNumber":57,"time":1,"duration":0.2},{"midiNumber":59,"time":1.2,"duration":0.2},{"midiNumber":60,"time":1.4,"duration":0.2},{"midiNumber":62,"time":1.5999999999999999,"duration":0.2},{"midiNumber":64,"time":1.7999999999999998,"duration":0.2},{"midiNumber":65,"time":1.9999999999999998,"duration":0.2}];
     const key = e.target;
     if (key.classList.contains("pressed")) {
       key.classList.remove("pressed");

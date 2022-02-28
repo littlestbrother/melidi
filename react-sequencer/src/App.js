@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Keys from "./components/Keys";
 import PianoControls from "./components/PianoControls";
 
