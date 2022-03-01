@@ -22,8 +22,10 @@ body {
   text-align: center;
 }
 
-.hidden {
+.hide-me {
+  visibility: hidden;
   display: none;
+  height: 0px;
 }
 
 /* sequencer keys */

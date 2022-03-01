@@ -3,11 +3,6 @@ import React from "react";
 const Grid = ({
   grid,
   keyName,
-  handleGridSize,
-  inputCells,
-  setCells,
-  inputRows,
-  setRows,
 }) => {
   const cells = new Array(grid.cells).fill(0);
   const rows = new Array(grid.rows).fill(0);
@@ -26,9 +21,16 @@ const Grid = ({
       <main>
         {rows.map((row, index) => (
           <ul className={keyName} key={"index"}>
-            <p className="name origin">{keyName.replace(new RegExp("[0-9]","g"), "").replace("row", "")}</p>
+            <p className="name origin">
+              {keyName.replace(new RegExp("[0-9]", "g"), "").replace("row", "")}
+            </p>
             {cells.map((cell, index) => (
-              <li key={index} className="key sharp" id={index} onClick={handleClick} />
+              <li
+                key={index}
+                className="key sharp"
+                id={index + 1}
+                onClick={handleClick}
+              />
             ))}
           </ul>
         ))}
@@ -39,9 +41,16 @@ const Grid = ({
       <main>
         {rows.map((row, index) => (
           <ul className={keyName} key={index}>
-            <p className="name">{keyName.replace(new RegExp("[0-9]","g"), "").replace("row", "")}</p>
+            <p className="name">
+              {keyName.replace(new RegExp("[0-9]", "g"), "").replace("row", "")}
+            </p>
             {cells.map((cell, index) => (
-              <li key={index} className="key" onClick={handleClick} />
+              <li
+                key={index}
+                className="key"
+                id={index + 1}
+                onClick={handleClick}
+              />
             ))}
           </ul>
         ))}

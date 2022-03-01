@@ -13,3 +13,6 @@
 * 1:30 PM start lunch
 * 2:30 PM finish lunch, start working
 * 5:10 PM finish working
+#### Monday 02/28
+* 6:10 PM working
+* 8:48 PM finish working
