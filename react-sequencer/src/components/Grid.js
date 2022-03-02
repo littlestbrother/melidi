@@ -1,62 +1,70 @@
 import React from "react";
+// import { render } from "react-dom";
 
-const Grid = ({
-  grid,
-  keyName,
-}) => {
-  const cells = new Array(grid.cells).fill(0);
-  const rows = new Array(grid.rows).fill(0);
+class Grid extends React.Component {
+  constructor(props, grid, keyName) {
+    super(props);
+  }
 
-  const handleClick = (e) => {
-    const key = e.target;
-    if (key.classList.contains("pressed")) {
-      key.classList.remove("pressed");
+  cells = new Array(this.grid.cells).fill(0);
+  rows = new Array(this.grid.rows).fill(0);
+
+  handleClick = (e) => {
+    this.key = e.target;
+    if (this.key.classList.contains("pressed")) {
+      this.key.classList.remove("pressed");
     } else {
-      key.classList.add("pressed");
+      this.key.classList.add("pressed");
     }
   };
 
-  if (keyName.includes("#")) {
-    return (
-      <main>
-        {rows.map((row, index) => (
-          <ul className={keyName} key={"index"}>
-            <p className="name origin">
-              {keyName.replace(new RegExp("[0-9]", "g"), "").replace("row", "")}
-            </p>
-            {cells.map((cell, index) => (
-              <li
-                key={index}
-                className="key sharp"
-                id={index + 1}
-                onClick={handleClick}
-              />
-            ))}
-          </ul>
-        ))}
-      </main>
-    );
-  } else {
-    return (
-      <main>
-        {rows.map((row, index) => (
-          <ul className={keyName} key={index}>
-            <p className="name">
-              {keyName.replace(new RegExp("[0-9]", "g"), "").replace("row", "")}
-            </p>
-            {cells.map((cell, index) => (
-              <li
-                key={index}
-                className="key"
-                id={index + 1}
-                onClick={handleClick}
-              />
-            ))}
-          </ul>
-        ))}
-      </main>
-    );
+  render() {
+    if (this.keyName.includes("#")) {
+      return (
+        <main>
+          {this.rows.map((row, index) => (
+            <ul className={this.keyName} key={"index"}>
+              <p className="name origin">
+                {this.keyName
+                  .replace(new RegExp("[0-9]", "g"), "")
+                  .replace("row", "")}
+              </p>
+              {this.cells.map((cell, index) => (
+                <li
+                  key={index}
+                  className="key sharp"
+                  id={index + 1}
+                  onClick={this.handleClick}
+                />
+              ))}
+            </ul>
+          ))}
+        </main>
+      );
+    } else {
+      return (
+        <main>
+          {this.rows.map((row, index) => (
+            <ul className={this.keyName} key={index}>
+              <p className="name">
+                {this.keyName
+                  .replace(new RegExp("[0-9]", "g"), "")
+                  .replace("row", "")}
+              </p>
+              {this.cells.map((cell, index) => (
+                <li
+                  key={index}
+                  className="key"
+                  id={index + 1}
+                  onClick={this.handleClick}
+                />
+              ))}
+            </ul>
+          ))}
+        </main>
+      );
+    }
   }
-};
+}
 
 export default Grid;
