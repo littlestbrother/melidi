@@ -1,12 +1,12 @@
 import React from "react";
-import PianoControls from "./components/PianoControls";
+import PlaybackControls from "./components/PlaybackControls";
 import "../src/styles.css";
 
 
 export default function App() {
   return (
     <div className="app">
-      <PianoControls></PianoControls>
+      <PlaybackControls></PlaybackControls>
     </div>
   );
 }

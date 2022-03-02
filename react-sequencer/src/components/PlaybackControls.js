@@ -14,7 +14,7 @@ const noteRange = {
   last: MidiNumbers.fromNote("d3"),
 };
 
-class PianoControls extends React.Component {
+class PlaybackControls extends React.Component {
   state = {
     recording: {
       mode: "RECORDING",
@@ -133,4 +133,4 @@ class PianoControls extends React.Component {
   }
 }
 
-export default PianoControls;
+export default PlaybackControls;

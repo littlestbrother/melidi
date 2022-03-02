@@ -19,7 +19,7 @@ class Grid extends React.Component {
       return (
         <main>
           {this.rows.map((row, index) => (
-            <ul className={this.keyName} key={"index"}>
+            <ul className={this.props.keyName} key={"index"}>
               <p className="name origin">
                 {this.props.keyName
                   .replace(new RegExp("[0-9]", "g"), "")
@@ -41,7 +41,7 @@ class Grid extends React.Component {
       return (
         <main>
           {this.rows.map((row, index) => (
-            <ul className={this.keyName} key={index}>
+            <ul className={this.props.keyName} key={index}>
               <p className="name">
                 {this.props.keyName
                   .replace(new RegExp("[0-9]", "g"), "")
