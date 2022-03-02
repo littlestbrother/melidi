@@ -2,12 +2,8 @@ import React from "react";
 // import { render } from "react-dom";
 
 class Grid extends React.Component {
-  constructor(props, grid, keyName) {
-    super(props);
-  }
-
-  cells = new Array(this.grid.cells).fill(0);
-  rows = new Array(this.grid.rows).fill(0);
+  cells = new Array(this.props.grid.cells).fill(0);
+  rows = new Array(this.props.grid.rows).fill(0);
 
   handleClick = (e) => {
     this.key = e.target;
@@ -19,13 +15,13 @@ class Grid extends React.Component {
   };
 
   render() {
-    if (this.keyName.includes("#")) {
+    if (this.props.keyName.includes("#")) {
       return (
         <main>
           {this.rows.map((row, index) => (
             <ul className={this.keyName} key={"index"}>
               <p className="name origin">
-                {this.keyName
+                {this.props.keyName
                   .replace(new RegExp("[0-9]", "g"), "")
                   .replace("row", "")}
               </p>
@@ -47,7 +43,7 @@ class Grid extends React.Component {
           {this.rows.map((row, index) => (
             <ul className={this.keyName} key={index}>
               <p className="name">
-                {this.keyName
+                {this.props.keyName
                   .replace(new RegExp("[0-9]", "g"), "")
                   .replace("row", "")}
               </p>

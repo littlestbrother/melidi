@@ -1,5 +1,5 @@
 import React from "react";
-import { Piano, MidiNumbers } from "react-piano";
+import { Piano } from "react-piano";
 import Grid from "./Grid";
 
 const grid = { cells: 19, rows: 1 };
