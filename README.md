@@ -16,6 +16,7 @@
 #### Monday 02/28
 * 6:10 PM working
 * 8:48 PM finish working
-#### Tuesday 03/21
+#### Tuesday 03/01
 * 6:05 PM working
 * 8:50 PM finish workig
+#### Wenesday 03/02
