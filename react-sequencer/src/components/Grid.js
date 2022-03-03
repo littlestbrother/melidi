@@ -7,6 +7,7 @@ class Grid extends React.Component {
 
   handleClick = (e) => {
     this.key = e.target;
+
     if (this.key.classList.contains("pressed")) {
       this.key.classList.remove("pressed");
     } else {
@@ -15,11 +16,14 @@ class Grid extends React.Component {
   };
 
   render() {
+
+    var recordEventNote = this.props.recordEventNote;
+
     if (this.props.keyName.includes("#")) {
       return (
         <main>
           {this.rows.map((row, index) => (
-            <ul className={this.props.keyName} key={"index"}>
+            <ul className={this.props.keyName} key={index}>
               <p className="name origin">
                 {this.props.keyName
                   .replace(new RegExp("[0-9]", "g"), "")
@@ -30,7 +34,8 @@ class Grid extends React.Component {
                   key={index}
                   className="key sharp"
                   id={index + 1}
-                  onClick={this.handleClick}
+                  // onClick={this.handleClick}
+                  onClick={() => recordEventNote('hello')}
                 />
               ))}
             </ul>

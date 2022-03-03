@@ -5,7 +5,11 @@ import Grid from "./Grid";
 const grid = { cells: 19, rows: 1 };
 
 class PianoWithRecording extends React.Component {
-  // 👇👇👇👇👇👇👇 FIGURE THIS OUT
+
+  constructor(props) {
+    super(props);
+    var recordEventNote = this.recordEventNote.bind(this);
+  }
 
   recordNotes = (midiNumbers, duration) => {
     if (this.props.recording.mode !== "RECORDING") {
@@ -24,7 +28,14 @@ class PianoWithRecording extends React.Component {
     });
   };
 
+  recordEventNote(someArg){
+    alert('it did a thing');
+  }
+
   render() {
+
+    var recordEventNote = this.recordEventNote;
+
     const { playNote, stopNote, recording, setRecording, ...pianoProps } =
       this.props;
 
@@ -37,7 +48,7 @@ class PianoWithRecording extends React.Component {
       <div>
         {/* sequencer UI */}
         <div className="keys">
-          <Grid keyName={"row F#5"} grid={grid} />
+          <Grid keyName={"row F#5"} grid={grid} recordEventNote={recordEventNote.bind(this)}/>
           <Grid keyName={"row F5"} grid={grid} />
           <Grid keyName={"row E5"} grid={grid} />
           <Grid keyName={"row D#5"} grid={grid} />
