@@ -6,6 +6,7 @@ class Grid extends React.Component {
   rows = new Array(this.props.grid.rows).fill(0);
 
   handleClick = (e) => {
+    console.log(e);
     this.key = e.target;
 
     if (this.key.classList.contains("pressed")) {
@@ -16,8 +17,8 @@ class Grid extends React.Component {
   };
 
   render() {
-
-    var recordEventNote = this.props.recordEventNote;
+    //https://stackoverflow.com/a/42549927/9090521
+    var pushNoteToEvent = this.props.pushNoteToEvent;
 
     if (this.props.keyName.includes("#")) {
       return (
@@ -34,8 +35,7 @@ class Grid extends React.Component {
                   key={index}
                   className="key sharp"
                   id={index + 1}
-                  // onClick={this.handleClick}
-                  onClick={() => recordEventNote('hello')}
+                  onClick={() => pushNoteToEvent()}
                 />
               ))}
             </ul>

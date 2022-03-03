@@ -8,17 +8,17 @@ class PianoWithRecording extends React.Component {
 
   constructor(props) {
     super(props);
-    var recordEventNote = this.recordEventNote.bind(this);
+    var pushNoteToEvent = this.pushNoteToEvent.bind(this);
   }
 
-  recordNotes = (midiNumbers, duration) => {
+  recordNotes = (midiNumbers, duration, time) => {
     if (this.props.recording.mode !== "RECORDING") {
       return;
     }
     const newEvents = midiNumbers.map((midiNumber) => {
       return {
         midiNumber,
-        time: this.props.recording.currentTime,
+        time: time,
         duration: duration,
       };
     });
@@ -28,13 +28,13 @@ class PianoWithRecording extends React.Component {
     });
   };
 
-  recordEventNote(someArg){
-    alert('it did a thing');
+  pushNoteToEvent(midiArr, duration, time){
+    this.recordNotes([36], 42, 123);
   }
 
   render() {
 
-    var recordEventNote = this.recordEventNote;
+    var pushNoteToEvent = this.pushNoteToEvent;
 
     const { playNote, stopNote, recording, setRecording, ...pianoProps } =
       this.props;
@@ -48,7 +48,7 @@ class PianoWithRecording extends React.Component {
       <div>
         {/* sequencer UI */}
         <div className="keys">
-          <Grid keyName={"row F#5"} grid={grid} recordEventNote={recordEventNote.bind(this)}/>
+          <Grid keyName={"row F#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)}/>
           <Grid keyName={"row F5"} grid={grid} />
           <Grid keyName={"row E5"} grid={grid} />
           <Grid keyName={"row D#5"} grid={grid} />
