@@ -23,7 +23,6 @@ class Grid extends React.Component {
 
     const handleClick = (e) => {
       this.key = parse(e.outerHTML);
-      console.log(this.key.props);
 
       if (this.key.props.className.includes("pressed")) {
         e.classList.remove("pressed");

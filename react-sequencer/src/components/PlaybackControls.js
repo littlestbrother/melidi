@@ -53,7 +53,6 @@ class PlaybackControls extends React.Component {
   };
 
   setRecording = (value) => {
-    console.log(value);
     this.setState({
       recording: Object.assign({}, this.state.recording, value),
     });
@@ -98,6 +97,22 @@ class PlaybackControls extends React.Component {
   };
 
   onClickClear = () => {
+
+    this.clearUi = () => {
+
+      this.keys = document.getElementsByClassName('pressed');
+
+      for (let key of this.keys) {
+        key.classList.remove("pressed");
+      }
+
+      if (document.getElementsByClassName('pressed').length > 0) {
+        this.clearUi();
+      }
+    }
+
+    this.clearUi();
+
     this.onClickStop();
     this.setRecording({
       events: [],
