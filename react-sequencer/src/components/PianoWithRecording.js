@@ -8,7 +8,8 @@ class PianoWithRecording extends React.Component {
 
   constructor(props) {
     super(props);
-    var pushNoteToEvent = this.pushNoteToEvent.bind(this);
+    const pushNoteToEvent = this.pushNoteToEvent.bind(this);
+    const removeNoteFromEvent = this.removeNoteFromEvent.bind(this);
   }
 
   recordNotes = (midiNumbers, duration, time) => {
@@ -24,17 +25,45 @@ class PianoWithRecording extends React.Component {
     });
     this.props.setRecording({
       events: this.props.recording.events.concat(newEvents),
-      currentTime: this.props.recording.currentTime + duration,
     });
   };
 
-  pushNoteToEvent(midiArr, duration, time){
-    this.recordNotes([36], 42, 123);
+  removeNotes = (midiNumbers, duration, time) => {
+    if (this.props.recording.mode !== "RECORDING") {
+      return;
+    }
+    const oldEvents = midiNumbers.map((midiNumber) => {
+      return {
+        midiNumber,
+        time: time,
+        duration: duration,
+      };
+    });
+
+    this.props.setRecording({
+      events: this.props.recording.events.splice(this.props.recording.events.indexOf(oldEvents), 1)
+    });
+
+    this.props.setRecording({
+      events: this.props.recording.events,
+      mode: "RECORDING",
+      currentEvents: [],
+      currentTime: 0,
+    });
+  }
+
+  pushNoteToEvent(midiArr, duration, time) {
+    this.recordNotes([midiArr], duration, time);
+  }
+
+  removeNoteFromEvent(midiArr, duration, time) {
+    this.removeNotes([midiArr], duration, time);
   }
 
   render() {
 
-    var pushNoteToEvent = this.pushNoteToEvent;
+    const pushNoteToEvent = this.pushNoteToEvent;
+    const removeNoteFromEvent = this.removeNoteFromEvent;
 
     const { playNote, stopNote, recording, setRecording, ...pianoProps } =
       this.props;
@@ -48,7 +77,7 @@ class PianoWithRecording extends React.Component {
       <div>
         {/* sequencer UI */}
         <div className="keys">
-          <Grid keyName={"row F#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)}/>
+          <Grid keyName={"row F#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
           <Grid keyName={"row F5"} grid={grid} />
           <Grid keyName={"row E5"} grid={grid} />
           <Grid keyName={"row D#5"} grid={grid} />

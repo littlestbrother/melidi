@@ -53,6 +53,7 @@ class PlaybackControls extends React.Component {
   };
 
   setRecording = (value) => {
+    console.log(value);
     this.setState({
       recording: Object.assign({}, this.state.recording, value),
     });
@@ -127,7 +128,7 @@ class PlaybackControls extends React.Component {
         <button onClick={this.onClickPlay}>Play</button>
         <button onClick={this.onClickStop}>Stop</button>
         <button onClick={this.onClickClear}>Clear</button>
-        <div>{JSON.stringify(this.state.recording.events)}</div>
+        <div className="origin">{JSON.stringify(this.state.recording.events)}</div>
       </div>
     );
   }

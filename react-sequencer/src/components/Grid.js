@@ -6,9 +6,7 @@ class Grid extends React.Component {
   rows = new Array(this.props.grid.rows).fill(0);
 
   handleClick = (e) => {
-    console.log(e);
     this.key = parse(e.outerHTML);
-    console.log(this.key.props);
 
     if (this.key.props.className.includes("pressed")) {
       e.classList.remove("pressed");
@@ -21,6 +19,20 @@ class Grid extends React.Component {
 
     //https://stackoverflow.com/a/42549927/9090521
     const pushNoteToEvent = this.props.pushNoteToEvent;
+    const removeNoteFromEvent = this.props.removeNoteFromEvent;
+
+    const handleClick = (e) => {
+      this.key = parse(e.outerHTML);
+      console.log(this.key.props);
+
+      if (this.key.props.className.includes("pressed")) {
+        e.classList.remove("pressed");
+        removeNoteFromEvent();
+      } else {
+        e.classList.add("pressed");
+        pushNoteToEvent(46, 0.199, this.key.props.id / 5);
+      }
+    }
 
     const shortKeyName = this.props.keyName
       .replace(new RegExp("[0-9]", "g"), "")
@@ -39,7 +51,7 @@ class Grid extends React.Component {
                   key={index}
                   className="key sharp"
                   id={index}
-                  onClick={() => { pushNoteToEvent(); this.handleClick(document.getElementById(index)) }}
+                  onClick={() => handleClick(document.getElementById(index))}
                   name={shortKeyName}
                 />
               ))}
@@ -60,7 +72,7 @@ class Grid extends React.Component {
                   key={index}
                   className="key"
                   id={index}
-                  onClick={() => { pushNoteToEvent(); this.handleClick(document.getElementById(index)) }}
+                  // onClick={() => { pushNoteToEvent(); this.handleClick(document.getElementById(index)) }}
                   name={shortKeyName}
                 />
               ))}
