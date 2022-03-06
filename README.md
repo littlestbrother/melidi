@@ -22,3 +22,5 @@
 #### Wenesday 03/02 | 3 HRS
 * 5:57 PM working
 * 8:53 PM finish working
+#### Sunday 03/06 | 
+* 9:20 AM working
