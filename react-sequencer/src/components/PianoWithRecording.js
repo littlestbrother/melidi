@@ -2,7 +2,7 @@ import React from "react";
 import { Piano } from "react-piano";
 import Grid from "./Grid";
 
-const grid = { cells: 37, rows: 1 };
+const grid = { cells: 100, rows: 1 };
 
 class PianoWithRecording extends React.Component {
 
@@ -74,7 +74,7 @@ class PianoWithRecording extends React.Component {
         ? currentEvents.map((event) => event.midiNumber)
         : null;
     return (
-      <div>
+      <div className="container">
         {/* sequencer UI */}
         <div className="keys">
           <Grid keyName={"row F#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />

@@ -14,7 +14,6 @@ class Grid extends React.Component {
 
     const handleClick = (e) => {
       this.key = parse(e[0].outerHTML);
-      console.log(this.key.props);
 
       if (this.key.props.className.includes("pressed")) {
         e[0].classList.remove("pressed");
@@ -39,7 +38,7 @@ class Grid extends React.Component {
         <main>
           {this.rows.map((row, index) => (
             <ul className={this.props.keyName} key={index}>
-              <p className="name origin">
+              <p className="name origin sticky">
                 {omitOctaves}
               </p>
               {this.cells.map((cell, index) => (
@@ -60,7 +59,7 @@ class Grid extends React.Component {
         <main>
           {this.rows.map((row, index) => (
             <ul className={this.props.keyName} key={index}>
-              <p className="name">
+              <p className="name sticky">
                 {omitOctaves}
               </p>
               {this.cells.map((cell, index) => (

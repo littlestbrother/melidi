@@ -14,27 +14,12 @@ const noteRange = {
   last: MidiNumbers.fromNote("d3"),
 };
 
-console.log(noteRange.first);
-console.log(noteRange.last);
-
 class PlaybackControls extends React.Component {
   state = {
     recording: {
       mode: "RECORDING",
-      // events: [
-      //   { midiNumber: 48, time: 0, duration: 0.2 },
-      //   { midiNumber: 50, time: 0.2, duration: 0.2 },
-      //   { midiNumber: 52, time: 0.4, duration: 0.2 },
-      //   { midiNumber: 53, time: 0.61, duration: 0.2 },
-      //   { midiNumber: 55, time: 0.8, duration: 0.2 },
-      //   { midiNumber: 57, time: 1, duration: 0.2 },
-      //   { midiNumber: 59, time: 1.2, duration: 0.2 },
-      //   { midiNumber: 60, time: 1.4, duration: 0.2 },
-      //   { midiNumber: 62, time: 1.5999999999999999, duration: 0.2 },
-      //   { midiNumber: 64, time: 1.7999999999999998, duration: 0.2 },
-      //   { midiNumber: 65, time: 1.9999999999999998, duration: 0.2 },
-      // ],
-      events: [],
+      events: [{"midiNumber":60,"time":0,"duration":0.1},{"midiNumber":62,"time":0.6,"duration":0.1},{"midiNumber":64,"time":0.8,"duration":0.1},{"midiNumber":67,"time":1.4,"duration":0.1},{"midiNumber":64,"time":2,"duration":0.1},{"midiNumber":62,"time":2.6,"duration":0.1},{"midiNumber":60,"time":3.2,"duration":0.1}],
+      // events: [],
       currentTime: 0,
       currentEvents: [],
     },
@@ -144,7 +129,7 @@ class PlaybackControls extends React.Component {
           )}
         />
         <button onClick={this.onClickPlay}>Play</button>
-        <button onClick={this.onClickStop}>Stop</button>
+        {/* <button onClick={this.onClickStop}>Stop</button> */}
         <button onClick={this.onClickClear}>Clear</button>
         <div className="origin">{JSON.stringify(this.state.recording.events)}</div>
       </div>
