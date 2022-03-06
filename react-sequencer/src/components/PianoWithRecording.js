@@ -2,7 +2,7 @@ import React from "react";
 import { Piano } from "react-piano";
 import Grid from "./Grid";
 
-const grid = { cells: 19, rows: 1 };
+const grid = { cells: 37, rows: 1 };
 
 class PianoWithRecording extends React.Component {
 
@@ -78,24 +78,24 @@ class PianoWithRecording extends React.Component {
         {/* sequencer UI */}
         <div className="keys">
           <Grid keyName={"row F#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
-          <Grid keyName={"row F5"} grid={grid} />
-          <Grid keyName={"row E5"} grid={grid} />
-          <Grid keyName={"row D#5"} grid={grid} />
-          <Grid keyName={"row D5"} grid={grid} />
-          <Grid keyName={"row C#5"} grid={grid} />
-          <Grid keyName={"row C5"} grid={grid} />
-          <Grid keyName={"row B4"} grid={grid} />
-          <Grid keyName={"row A#4"} grid={grid} />
-          <Grid keyName={"row A4"} grid={grid} />
-          <Grid keyName={"row G#4"} grid={grid} />
-          <Grid keyName={"row G4"} grid={grid} />
-          <Grid keyName={"row F#4"} grid={grid} />
-          <Grid keyName={"row F4"} grid={grid} />
-          <Grid keyName={"row E4"} grid={grid} />
-          <Grid keyName={"row D#4"} grid={grid} />
-          <Grid keyName={"row D4"} grid={grid} />
-          <Grid keyName={"row C#4"} grid={grid} />
-          <Grid keyName={"row C4"} grid={grid} />
+          <Grid keyName={"row F5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row E5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row D#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row D5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row C#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row C5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row B4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row A#4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row A4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row G#4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row G4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row F#4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row F4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row E4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row D#4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row D4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row C#4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row C4"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
         </div>
 
         <div className="hide-me">
