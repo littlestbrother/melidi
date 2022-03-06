@@ -1,5 +1,5 @@
 import React from "react";
-// import { render } from "react-dom";
+import parse from "html-react-parser";
 
 class Grid extends React.Component {
   cells = new Array(this.props.grid.cells).fill(0);
@@ -7,18 +7,24 @@ class Grid extends React.Component {
 
   handleClick = (e) => {
     console.log(e);
-    this.key = e.target;
+    this.key = parse(e.outerHTML);
+    console.log(this.key.props);
 
-    if (this.key.classList.contains("pressed")) {
-      this.key.classList.remove("pressed");
+    if (this.key.props.className.includes("pressed")) {
+      e.classList.remove("pressed");
     } else {
-      this.key.classList.add("pressed");
+      e.classList.add("pressed");
     }
   };
 
   render() {
+
     //https://stackoverflow.com/a/42549927/9090521
-    var pushNoteToEvent = this.props.pushNoteToEvent;
+    const pushNoteToEvent = this.props.pushNoteToEvent;
+
+    const shortKeyName = this.props.keyName
+      .replace(new RegExp("[0-9]", "g"), "")
+      .replace("row", "")
 
     if (this.props.keyName.includes("#")) {
       return (
@@ -26,16 +32,15 @@ class Grid extends React.Component {
           {this.rows.map((row, index) => (
             <ul className={this.props.keyName} key={index}>
               <p className="name origin">
-                {this.props.keyName
-                  .replace(new RegExp("[0-9]", "g"), "")
-                  .replace("row", "")}
+                {shortKeyName}
               </p>
               {this.cells.map((cell, index) => (
                 <li
                   key={index}
                   className="key sharp"
-                  id={index + 1}
-                  onClick={() => pushNoteToEvent()}
+                  id={index}
+                  onClick={() => { pushNoteToEvent(); this.handleClick(document.getElementById(index)) }}
+                  name={shortKeyName}
                 />
               ))}
             </ul>
@@ -48,16 +53,15 @@ class Grid extends React.Component {
           {this.rows.map((row, index) => (
             <ul className={this.props.keyName} key={index}>
               <p className="name">
-                {this.props.keyName
-                  .replace(new RegExp("[0-9]", "g"), "")
-                  .replace("row", "")}
+                {shortKeyName}
               </p>
               {this.cells.map((cell, index) => (
                 <li
                   key={index}
                   className="key"
-                  id={index + 1}
-                  onClick={this.handleClick}
+                  id={index}
+                  onClick={() => { pushNoteToEvent(); this.handleClick(document.getElementById(index)) }}
+                  name={shortKeyName}
                 />
               ))}
             </ul>
