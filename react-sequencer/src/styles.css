@@ -11,15 +11,14 @@ body {
 }
 
 .container {
-  padding: 10px;
   display: flex;
   overflow-x: scroll;
-  width: 1629px;
-  /* background-color: #222831; */
+  width: 1514px;
+  margin-left: 60px;
 }
 
 .title {
-  margin-bottom: -4px;
+  margin-bottom: 7px;
   color: #F5F5F5;
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -29,6 +28,22 @@ body {
   visibility: hidden;
   display: none;
   height: 0px;
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+  height: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9D9D9D;
+  border-top: 2px solid #121212;
+  border-bottom: 2px solid #121212;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #191919;
 }
 
 /* sequencer keys */
@@ -52,9 +67,10 @@ dd {
 .name {
   font-family: 'Roboto', sans-serif;
   padding: 10.5px;
-  min-width: 20px;
+  min-width: 22px;
   background-color: #E8E8E8;
   margin: 1px;
+  margin-left: 0px;
   text-align: center;
 }
 
@@ -72,10 +88,6 @@ dd {
   margin: 1px;
 }
 
-.keys{
-  margin-left: -11px;
-}
-
 .sharp {
   background-color: #9D9D9D;
 }
@@ -86,5 +98,5 @@ dd {
 
 .sticky {
   position: sticky;
-  left: -10px;
+  left: 0px
 }

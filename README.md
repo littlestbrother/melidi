@@ -22,5 +22,8 @@
 #### Wenesday 03/02 | 3 HRS
 * 5:57 PM working
 * 8:53 PM finish working
-#### Sunday 03/06 | 
+#### Sunday 03/06 | 6.75 HRS
 * 9:20 AM working
+* 1:06 PM start lunch
+* 2:05 PM finish lunch, start working
+* 5:03 PM finish working

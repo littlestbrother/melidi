@@ -20,7 +20,7 @@ class Grid extends React.Component {
         removeNoteFromEvent();
       } else {
         e[0].classList.add("pressed");
-        pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.1, this.key.props.id / 5);
+        pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.19, this.key.props.id / 5);
       }
     }
 
