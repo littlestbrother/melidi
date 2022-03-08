@@ -8,10 +8,10 @@ class PianoWithRecording extends React.Component {
 
   constructor(props) {
     super(props);
-/* eslint-disable no-unused-vars  */
+    /* eslint-disable no-unused-vars  */
     const pushNoteToEvent = this.pushNoteToEvent.bind(this);
     const removeNoteFromEvent = this.removeNoteFromEvent.bind(this);
-/* eslint-enable no-unused-vars  */
+    /* eslint-enable no-unused-vars  */
 
   }
 
@@ -80,6 +80,12 @@ class PianoWithRecording extends React.Component {
       <div className="container">
         {/* sequencer UI */}
         <div className="keys">
+          <Grid keyName={"row C6"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row B5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row A#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row A5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row G#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
+          <Grid keyName={"row G5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
           <Grid keyName={"row F#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
           <Grid keyName={"row F5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
           <Grid keyName={"row E5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />

@@ -17,10 +17,10 @@ class Grid extends React.Component {
 
       if (this.key.props.className.includes("pressed")) {
         e[0].classList.remove("pressed");
-        removeNoteFromEvent(MidiNumbers.fromNote(name), 0.19, (this.key.props.id / 5));
+        removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
       } else {
         e[0].classList.add("pressed");
-        pushNoteToEvent(MidiNumbers.fromNote(name), 0.19, (this.key.props.id / 5));
+        pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
       }
     }
 

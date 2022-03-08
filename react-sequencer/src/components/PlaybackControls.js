@@ -10,8 +10,8 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const soundfontHostname = "https://d1pzp51pvbm36p.cloudfront.net";
 
 const noteRange = {
-  first: MidiNumbers.fromNote("c3"),
-  last: MidiNumbers.fromNote("d3"),
+  first: MidiNumbers.fromNote("c4"),
+  last: MidiNumbers.fromNote("c6"),
 };
 
 class PlaybackControls extends React.Component {
