@@ -27,5 +27,6 @@
 * 1:06 PM start lunch
 * 2:05 PM finish lunch, start working
 * 5:03 PM finish working
-#### Monday 03/07
+#### Monday 03/07 | 3 HRS
 * 5:58 PM working
+* 9:06 PM finish working
