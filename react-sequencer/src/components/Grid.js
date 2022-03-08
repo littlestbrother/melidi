@@ -8,7 +8,7 @@ class Grid extends React.Component {
 
   render() {
 
-    //https://stackoverflow.com/a/42549927/9090521
+    // https://stackoverflow.com/a/42549927/9090521
     const pushNoteToEvent = this.props.pushNoteToEvent;
     const removeNoteFromEvent = this.props.removeNoteFromEvent;
 
@@ -17,10 +17,10 @@ class Grid extends React.Component {
 
       if (this.key.props.className.includes("pressed")) {
         e[0].classList.remove("pressed");
-        removeNoteFromEvent();
+        removeNoteFromEvent(MidiNumbers.fromNote(name), 0.19, (this.key.props.id / 5));
       } else {
         e[0].classList.add("pressed");
-        pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.19, this.key.props.id / 5);
+        pushNoteToEvent(MidiNumbers.fromNote(name), 0.19, (this.key.props.id / 5));
       }
     }
 
@@ -38,7 +38,7 @@ class Grid extends React.Component {
         <main>
           {this.rows.map((row, index) => (
             <ul className={this.props.keyName} key={index}>
-              <p className="name origin sticky">
+              <p className="note-name sharp-named-note sticky">
                 {omitOctaves}
               </p>
               {this.cells.map((cell, index) => (
@@ -59,7 +59,7 @@ class Grid extends React.Component {
         <main>
           {this.rows.map((row, index) => (
             <ul className={this.props.keyName} key={index}>
-              <p className="name sticky">
+              <p className="note-name sticky">
                 {omitOctaves}
               </p>
               {this.cells.map((cell, index) => (

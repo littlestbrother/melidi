@@ -8,8 +8,11 @@ class PianoWithRecording extends React.Component {
 
   constructor(props) {
     super(props);
+/* eslint-disable no-unused-vars  */
     const pushNoteToEvent = this.pushNoteToEvent.bind(this);
     const removeNoteFromEvent = this.removeNoteFromEvent.bind(this);
+/* eslint-enable no-unused-vars  */
+
   }
 
   recordNotes = (midiNumbers, duration, time) => {

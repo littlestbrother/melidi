@@ -18,7 +18,7 @@ class PlaybackControls extends React.Component {
   state = {
     recording: {
       mode: "RECORDING",
-      events: [{"midiNumber":60,"time":0,"duration":0.1},{"midiNumber":62,"time":0.6,"duration":0.1},{"midiNumber":64,"time":0.8,"duration":0.1},{"midiNumber":67,"time":1.4,"duration":0.1},{"midiNumber":64,"time":2,"duration":0.1},{"midiNumber":62,"time":2.6,"duration":0.1},{"midiNumber":60,"time":3.2,"duration":0.1}],
+      events: [{ "midiNumber": 60, "time": 0, "duration": 0.1 }, { "midiNumber": 62, "time": 0.6, "duration": 0.1 }, { "midiNumber": 64, "time": 0.8, "duration": 0.1 }, { "midiNumber": 67, "time": 1.4, "duration": 0.1 }, { "midiNumber": 64, "time": 2, "duration": 0.1 }, { "midiNumber": 62, "time": 2.6, "duration": 0.1 }, { "midiNumber": 60, "time": 3.2, "duration": 0.1 }],
       // events: [],
       currentTime: 0,
       currentEvents: [],
@@ -68,7 +68,7 @@ class PlaybackControls extends React.Component {
         }, time * 1000)
       );
     });
-    // Stop at the end
+
     setTimeout(() => {
       this.onClickStop();
     }, this.getRecordingEndTime() * 1000);
@@ -102,6 +102,7 @@ class PlaybackControls extends React.Component {
     this.clearUi();
 
     this.onClickStop();
+
     this.setRecording({
       events: [],
       mode: "RECORDING",
@@ -117,21 +118,20 @@ class PlaybackControls extends React.Component {
           instrumentName="lead_8_bass__lead"
           audioContext={audioContext}
           hostname={soundfontHostname}
-          render={({ isLoading, playNote, stopNote }) => (
+          render={({ playNote, stopNote }) => (
             <PianoWithRecording
               recording={this.state.recording}
               setRecording={this.setRecording}
               noteRange={noteRange}
               playNote={playNote}
               stopNote={stopNote}
-              disabled={isLoading}
             />
           )}
         />
         <button onClick={this.onClickPlay}>Play</button>
-        {/* <button onClick={this.onClickStop}>Stop</button> */}
+        <button onClick={this.onClickStop}>Stop</button>
         <button onClick={this.onClickClear}>Clear</button>
-        {/* <div className="origin">{JSON.stringify(this.state.recording.events)}</div> */}
+        {/* <div className="sharp-named-note">{JSON.stringify(this.state.recording.events)}</div> */}
       </div>
     );
   }
