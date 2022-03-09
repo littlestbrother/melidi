@@ -15,7 +15,7 @@ class SoundfontProvider extends React.Component {
   static defaultProps = {
     format: 'mp3',
     soundfont: 'MusyngKite',
-    instrumentName: 'lead_8_bass__lead',
+    instrumentName: 'pad_4_choir',
   };
 
   constructor(props) {

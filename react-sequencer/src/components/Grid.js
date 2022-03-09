@@ -33,6 +33,11 @@ class Grid extends React.Component {
       .replace("row", "")
       .replace(" ", "")
 
+    const ConsoleLog = ({children}) => {
+      console.log(children);
+      return false
+    }
+
     if (this.props.keyName.includes("#")) {
       return (
         <main>

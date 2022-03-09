@@ -10,6 +10,7 @@
 
 body {
   background-color: #121212;
+  overflow: hidden;
 }
 
 .container {
@@ -20,16 +21,24 @@ body {
 }
 
 .title {
+  margin-right: 88px;
   margin-bottom: 7px;
   color: #F5F5F5;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
+  text-align: right;
+}
+
+hr{
+  margin-top: -1px;
+  width: 800px;
+  margin-right: 90px;
+  justify-content: center;
 }
 
 /* scroll bar */
 
 ::-webkit-scrollbar {
-  height: 20px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -89,7 +98,7 @@ dd {
 }
 
 .pressed {
-  background-color: #fe7e6d;
+  background-color: #D7385E;
 }
 
 .sticky {
@@ -98,6 +107,95 @@ dd {
 }
 
 /* playback controls */
+
+/* center */
+
+/* .playback-controls {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* left */
+
+.playback-controls {
+  margin-left: 60px;
+  margin-top: 10px;
+  justify-content: left;
+}
+
+/* play */
+
+.play-button {
+  max-width: 60px;
+  min-width: 60px;
+  margin-right: 30px;
+  padding: 5px 10px;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  /* color: #fff; */
+  background-color: #D7385E;
+  border: none;
+  border-radius: 3px;
+}
+
+.play-button:hover {background-color: #222831; color: white;}
+
+.play-button:active {
+  box-shadow: 0 3px black;
+  transform: translateY(3px);
+}
+
+/* stop */
+
+.stop-button {
+  max-width: 60px;
+  min-width: 60px;
+  margin-right: 30px;
+  padding: 5px 10px;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  /* color: #fff; */
+  background-color: #D7385E;
+  border: none;
+  border-radius: 3px;
+}
+
+.stop-button:hover {background-color: #222831; color: white;}
+
+.stop-button:active {
+  box-shadow: 0 3px black;
+  transform: translateY(3px);
+}
+
+/* clear */
+
+.clear-button {
+  max-width: 60px;
+  min-width: 60px;
+  margin-right: 30px;
+  padding: 5px 10px;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  /* color: #fff; */
+  background-color: #D7385E;
+  border: none;
+  border-radius: 3px;
+}
+
+.clear-button:hover {background-color: #222831; color: white;}
+
+.clear-button:active {
+  box-shadow: 0 3px black;
+  transform: translateY(3px);
+}
 
 .hide-me {
   visibility: hidden;

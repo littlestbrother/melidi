@@ -115,7 +115,7 @@ class PlaybackControls extends React.Component {
     return (
       <div>
         <SoundfontProvider
-          instrumentName="lead_8_bass__lead"
+          instrumentName="pad_4_choir"
           audioContext={audioContext}
           hostname={soundfontHostname}
           render={({ playNote, stopNote }) => (
@@ -128,10 +128,12 @@ class PlaybackControls extends React.Component {
             />
           )}
         />
-        <button onClick={this.onClickPlay}>Play</button>
-        <button onClick={this.onClickStop}>Stop</button>
-        <button onClick={this.onClickClear}>Clear</button>
+        <div className="playback-controls">
+        <button className="play-button" onClick={this.onClickPlay}>&#9658;</button>
+        <button className="stop-button" onClick={this.onClickStop}>&#9632;</button>
+        <button className="clear-button" onClick={this.onClickClear}>&#9672;</button>
         {/* <div className="sharp-named-note">{JSON.stringify(this.state.recording.events)}</div> */}
+        </div>
       </div>
     );
   }

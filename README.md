@@ -30,5 +30,6 @@
 #### Monday 03/07 | 3 HRS
 * 5:58 PM working
 * 9:06 PM finish working
-### Tuesday 03/08 |
+### Tuesday 03/08 | 3 HRS
 * 6:10 PM working
+* 9:20 PM finish working
