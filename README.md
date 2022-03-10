@@ -33,5 +33,6 @@
 ### Tuesday 03/08 | 3 HRS
 * 6:10 PM working
 * 9:20 PM finish working
-### Wednesdat 03/09 |
+### Wednesdat 03/09 | 3 HRS
 * 6:12 PM working
+* 9:04 PM finish working

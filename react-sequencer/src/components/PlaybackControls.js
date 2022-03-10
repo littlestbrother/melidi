@@ -92,6 +92,7 @@ class PlaybackControls extends React.Component {
 
       for (let key of this.keys) {
         key.classList.remove("pressed");
+        key.classList.remove("long");
       }
 
       if (document.getElementsByClassName('pressed').length > 0) {

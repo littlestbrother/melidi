@@ -15,9 +15,18 @@ class Grid extends React.Component {
     const handleClick = (e) => {
       this.key = parse(e[0].outerHTML);
 
-      if (this.key.props.className.includes("pressed")) {
+      if (this.key.props.className.includes("long")) {
         e[0].classList.remove("pressed");
+        e[0].classList.remove("long");
         removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
+        removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.3, (this.key.props.id / 5));
+      } else if (this.key.props.className.includes("pressed")) {
+        // e[0].classList.remove("pressed");
+        e[0].classList.add("long");
+        console.log(MidiNumbers.fromNote(shortKeyName));
+        console.log(this.key.props.id / 5);
+        removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
+        pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.3, (this.key.props.id / 5));
       } else {
         e[0].classList.add("pressed");
         pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));

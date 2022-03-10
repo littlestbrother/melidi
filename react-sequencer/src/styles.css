@@ -101,6 +101,10 @@ dd {
   background-color: #D7385E;
 }
 
+.long{
+  background-color: #FAD662;
+}
+
 .sticky {
   position: sticky;
   left: 0px
