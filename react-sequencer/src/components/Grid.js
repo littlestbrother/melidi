@@ -23,8 +23,7 @@ class Grid extends React.Component {
       } else if (this.key.props.className.includes("pressed")) {
         // e[0].classList.remove("pressed");
         e[0].classList.add("long");
-        console.log(MidiNumbers.fromNote(shortKeyName));
-        console.log(this.key.props.id / 5);
+
         removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
         pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.3, (this.key.props.id / 5));
       } else {
@@ -41,11 +40,6 @@ class Grid extends React.Component {
       .replace(new RegExp("[0-9]", "g"), "")
       .replace("row", "")
       .replace(" ", "")
-
-    const ConsoleLog = ({children}) => {
-      console.log(children);
-      return false
-    }
 
     if (this.props.keyName.includes("#")) {
       return (

@@ -44,7 +44,7 @@ class PianoWithRecording extends React.Component {
     });
 
     this.props.setRecording({
-      events: this.props.recording.events.splice(this.props.recording.events.indexOf(oldEvents), 1)
+      events: this.props.recording.events.splice(this.props.recording.events.findIndex( item => item.midiNumber === oldEvents[0].midiNumber && item.time === oldEvents[0].time && item.duration === oldEvents[0].duration ), 1)
     });
 
     this.props.setRecording({
