@@ -43,8 +43,18 @@ class PianoWithRecording extends React.Component {
       };
     });
 
+    this.removeSpecificNote = (stateArr, obj) => {
+      const index = stateArr.findIndex(item => item.midiNumber === obj[0].midiNumber && item.time === obj[0].time && item.duration === obj[0].duration)
+      if (index == -1) {
+        return stateArr;
+      } else {
+        return stateArr.splice(index, 1);
+      }
+    }
+
     this.props.setRecording({
-      events: this.props.recording.events.splice(this.props.recording.events.findIndex( item => item.midiNumber === oldEvents[0].midiNumber && item.time === oldEvents[0].time && item.duration === oldEvents[0].duration ), 1)
+      // events: this.props.recording.events.splice(this.props.recording.events.findIndex(item => item.midiNumber === oldEvents[0].midiNumber && item.time === oldEvents[0].time && item.duration === oldEvents[0].duration), 1)
+      events: this.removeSpecificNote(this.props.recording.events, oldEvents)
     });
 
     this.props.setRecording({
