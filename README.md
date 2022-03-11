@@ -36,5 +36,6 @@
 ### Wednesday 03/09 | 3 HRS
 * 6:12 PM working
 * 9:04 PM finish working
-### Friday 03/011 | 
+### Friday 03/011 | 3 HRS
 * 11:30 AM working
+* 2:33 PM finish working
