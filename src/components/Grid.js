@@ -18,17 +18,19 @@ class Grid extends React.Component {
       if (this.key.props.className.includes("long")) {
         e[0].classList.remove("pressed");
         e[0].classList.remove("long");
+        /* eslint-disable no-use-before-define  */
         removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
-        removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.3, (this.key.props.id / 5));
+        removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.25, (this.key.props.id / 5));
       } else if (this.key.props.className.includes("pressed")) {
         // e[0].classList.remove("pressed");
         e[0].classList.add("long");
 
         removeNoteFromEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
-        pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.3, (this.key.props.id / 5));
+        pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.25, (this.key.props.id / 5));
       } else {
         e[0].classList.add("pressed");
         pushNoteToEvent(MidiNumbers.fromNote(shortKeyName), 0.19, (this.key.props.id / 5));
+        /* eslint-enable no-use-before-define  */
       }
     }
 

@@ -14,12 +14,19 @@ const noteRange = {
   last: MidiNumbers.fromNote("c6"),
 };
 
+const disableGrid = () => {
+  document.getElementById("grid-keys").classList.add("disabled");
+}
+
+const enableGrid = () => {
+  document.getElementById("grid-keys").classList.remove("disabled");
+}
+
 class PlaybackControls extends React.Component {
   state = {
     recording: {
       mode: "RECORDING",
-      events: [{ "midiNumber": 60, "time": 0, "duration": 0.1 }, { "midiNumber": 62, "time": 0.6, "duration": 0.1 }, { "midiNumber": 64, "time": 0.8, "duration": 0.1 }, { "midiNumber": 67, "time": 1.4, "duration": 0.1 }, { "midiNumber": 64, "time": 2, "duration": 0.1 }, { "midiNumber": 62, "time": 2.6, "duration": 0.1 }, { "midiNumber": 60, "time": 3.2, "duration": 0.1 }],
-      // events: [],
+      events: [],
       currentTime: 0,
       currentEvents: [],
     },
@@ -47,6 +54,9 @@ class PlaybackControls extends React.Component {
   };
 
   onClickPlay = () => {
+
+    disableGrid();
+
     this.setRecording({
       mode: "PLAYING",
     });
@@ -75,6 +85,7 @@ class PlaybackControls extends React.Component {
   };
 
   onClickStop = () => {
+    enableGrid();
     this.scheduledEvents.forEach((scheduledEvent) => {
       clearTimeout(scheduledEvent);
     });
@@ -85,6 +96,8 @@ class PlaybackControls extends React.Component {
   };
 
   onClickClear = () => {
+
+    enableGrid()
 
     this.clearUi = () => {
 

@@ -45,7 +45,7 @@ class PianoWithRecording extends React.Component {
 
     this.removeSpecificNote = (stateArr, obj) => {
       const index = stateArr.findIndex(item => item.midiNumber === obj[0].midiNumber && item.time === obj[0].time && item.duration === obj[0].duration)
-      if (index == -1) {
+      if (index === -1) {
         return stateArr;
       } else {
         return stateArr.splice(index, 1);
@@ -89,7 +89,7 @@ class PianoWithRecording extends React.Component {
     return (
       <div className="container">
         {/* sequencer UI */}
-        <div className="keys">
+        <div className="keys" id="grid-keys">
           <Grid keyName={"row C6"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
           <Grid keyName={"row B5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
           <Grid keyName={"row A#5"} grid={grid} pushNoteToEvent={pushNoteToEvent.bind(this)} removeNoteFromEvent={removeNoteFromEvent.bind(this)} />
